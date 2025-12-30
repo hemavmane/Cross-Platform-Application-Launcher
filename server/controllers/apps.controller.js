@@ -19,7 +19,7 @@ function findExe(dir, exePath) {
   try {
     files = fs.readdirSync(dir, { withFileTypes: true });
   } catch (err) {
-
+ 
     return null;
   }
 
@@ -48,7 +48,7 @@ exports.addApp = async (req, res) => {
       });
     }
 
-    parameter = (parameter || "").trim();
+    parameter = (parameter || "").trim(); 
 
     const roots = ["C:\\Program Files", "C:\\Program Files (x86)"];
     let resolvedPath = null;
@@ -68,7 +68,7 @@ exports.addApp = async (req, res) => {
       });
     }
 
-
+    // ✅ Allow same exe with different parameters
     const existingApps = await Application.find({ exePath: resolvedPath });
     const isDuplicate = existingApps.some(
       (app) => (app.parameter || "") === parameter
@@ -135,7 +135,7 @@ exports.launchApp = async (req, res) => {
         { shell: true, detached: true, stdio: "ignore" }
       );
 
-      runningProcess.unref();
+      runningProcess.unref(); 
       runningProcess.on("error", (err) => console.error("Launch error:", err));
     } else {
       return res.status(500).json({ success: false, error: "Unsupported OS" });

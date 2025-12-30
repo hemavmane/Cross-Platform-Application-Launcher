@@ -3,7 +3,7 @@ export default function AppCard({ app, onLaunch }) {
     <div
       className={`app-card ${app.parameter ? "has-parameter" : ""}`}
       onClick={() => onLaunch(app)}
-      title={app.parameter || app.name} 
+      title={app.parameter || app.name} // tooltip on hover
     >
       <div className="app-icon">
         <img
