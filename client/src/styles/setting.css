@@ -1,0 +1,115 @@
+.settings-container {
+  max-width: 750px;
+  color: #fff;
+}
+
+/* Section title */
+.section-title {
+  margin: 25px 0 10px;
+  font-size: 18px;
+}
+
+/* Card like screenshot */
+.card {
+  background: rgba(90, 95, 110, 0.45);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.card.large {
+  min-height: 120px;
+}
+
+/* Inputs layout */
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputs input {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  color: #fff;
+}
+
+/* Buttons */
+.btn-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+  gap: 15px;
+}
+
+.primary {
+  background: #1e90ff;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+.danger {
+  background: #3a7bd5;
+  border: none;
+  padding: 6px 18px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Stored apps list */
+.app-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.app-row:last-child {
+  border-bottom: none;
+}
+
+.card-container {
+  max-height: 60vh;  
+  overflow-y: auto;
+  border-radius: 8px;
+}
+
+
+
+.card-container {
+  max-height: 300px;     
+  overflow-y: auto;
+  padding-right: 6px;    
+}
+
+
+.card-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.card-container::-webkit-scrollbar-track {
+  background: #1e1e1e;    
+  border-radius: 10px;
+}
+
+.card-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #4f8cff, #2b6bff);
+  border-radius: 10px;
+}
+
+.card-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #6fa3ff, #3b7bff);
+}
+
+
+.card-container {
+  scrollbar-width: thin;
+  scrollbar-color: #4f8cff #1e1e1e;
+}

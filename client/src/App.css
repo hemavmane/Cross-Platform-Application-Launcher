@@ -1,0 +1,213 @@
+/* =========================
+   ROOT LAYOUT
+========================= */
+.app-root {
+  display: flex;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+  width: 260px;
+  min-width: 260px;
+  background: linear-gradient(180deg, #0d3558 0%, #041a2a 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px 16px;
+  transition: all 0.3s ease;
+}
+
+/* Top logo */
+.sidebar-top a {
+  font-size: 10px;
+  font-weight: 600;
+  color: #fff;
+  display: block;
+  text-decoration: none;
+}
+
+/* Bottom settings icon */
+.sidebar-bottom a {
+  font-size: 26px;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar-bottom a:hover {
+  opacity: 1;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+.main-content {
+  flex: 1;
+  padding: 32px;
+  background-image: url("./assets/network-bg.avif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* =========================
+   APP GRID
+========================= */
+.home-canvas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 16px;
+}
+
+/* App tile UI */
+.app-tile {
+  width: 100%;
+  aspect-ratio: 1;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.app-tile:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.app-tile img {
+  width: 48px;
+  height: 48px;
+}
+
+.app-tile span {
+  margin-top: 4px;
+  font-size: 12px;
+  text-align: center;
+  word-break: break-word;
+}
+
+/* =========================
+   MEDIA QUERIES
+========================= */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px;
+    min-width: 60px;
+    padding: 16px 8px;
+  }
+
+  .sidebar-top a {
+    font-size: 20px;
+  }
+
+  .sidebar-bottom a {
+    font-size: 20px;
+  }
+
+  .main-content {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-root {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    width: 100%;
+    min-width: 100%;
+    padding: 8px;
+    justify-content: space-between;
+  }
+
+  .main-content {
+    padding: 8px;
+  }
+}
+
+
+.launcher-container {
+  padding: 50px;
+  font-family: Arial, sans-serif;
+}
+
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(140px, 1fr));
+  gap: 35px;
+  justify-items: center;
+}
+
+.app-card {
+  width: 120px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.app-icon {
+  width: 90px;
+  height: 90px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #6fb1ff, #3b82f6);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+  transition: transform 0.2s ease;
+}
+
+.app-icon img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.app-card:hover .app-icon {
+  transform: scale(1.08);
+}
+
+.app-name {
+  color: #fff;
+  font-size: 14px;
+  margin-top: 5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.card-container{
+    height: auto;
+    overflow-y: scroll;
+}
+
+.app-card.has-parameter {
+  position: relative;
+  cursor: pointer;
+}
+
+.app-card.has-parameter:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+
